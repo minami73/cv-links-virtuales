@@ -10,7 +10,7 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
    publicada solo-lectura; esta es la normal que abres para editar,
    tipo https://docs.google.com/spreadsheets/d/<ID>/edit.
    Si se deja vacía, el botón simplemente no se muestra.               */
-const SHEET_EDIT_URL = "";
+const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
 
 /* --- 2. Fixed schedule (Mon–Fri) --- */
 const SCHEDULE_BLOCKS = [
