@@ -10,6 +10,14 @@ function renderHome() {
     document.getElementById("todayDay").textContent = getTodayShortDay(today);
     document.getElementById("todayDate").textContent = capitalize(getTodayDiaLabel(today));
 
+    /* Botón "Abrir hoja de cálculo" — solo aparece si SHEET_EDIT_URL
+       está configurada en config.js. Abre la hoja editable, no el CSV. */
+    const sheetBtn = document.getElementById("sheetEditLink");
+    if (sheetBtn && typeof SHEET_EDIT_URL === "string" && SHEET_EDIT_URL.trim()) {
+        sheetBtn.href = SHEET_EDIT_URL.trim();
+        sheetBtn.hidden = false;
+    }
+
     const host = document.getElementById("groupsGrid");
     host.innerHTML = "";
     GROUPS.forEach(group => {

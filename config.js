@@ -5,6 +5,13 @@
    Mientras esté vacía la URL, la página usa datos de ejemplo.            */
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Maku1a5RsQVMhZS213_Po0EUQaKpKjtUXxz5YHUeaeIwiVVt5Rz-XVjFHvMttXjyFbpZ3MoP/pub?gid=1924435207&single=true&output=csv";
 
+/* --- 1.1 URL de EDICIÓN de la hoja (para el botón en la vista de
+   dirección). Es distinta a la de arriba: la de arriba es la versión
+   publicada solo-lectura; esta es la normal que abres para editar,
+   tipo https://docs.google.com/spreadsheets/d/<ID>/edit.
+   Si se deja vacía, el botón simplemente no se muestra.               */
+const SHEET_EDIT_URL = "";
+
 /* --- 2. Fixed schedule (Mon–Fri) --- */
 const SCHEDULE_BLOCKS = [
     { from: "08:00", to: "08:45" },
