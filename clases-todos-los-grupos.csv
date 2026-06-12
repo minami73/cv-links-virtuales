@@ -1,0 +1,97 @@
+grado,dia,hora_inicio,hora_fin,materia,profesor,link
+1°A,Lunes 8 de junio,08:00,08:45,Español,Mtra. Lucía Hernández,https://zoom.us/j/1000001000
+1°A,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Andrés Salinas,
+1°A,Lunes 8 de junio,09:30,10:15,Conocimiento del medio,Mtra. Paola Ríos,
+1°A,Lunes 8 de junio,10:15,11:00,Educación socioemocional,Mtra. Mariana Cervantes,https://meet.google.com/b-a13-xyz
+1°A,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Iván Fuentes,https://meet.google.com/b-a14-xyz
+1°A,Lunes 8 de junio,12:15,13:00,Artes,Mtra. Daniela Ortega,https://zoom.us/j/1000001555
+1°A,Lunes 8 de junio,13:00,13:45,Educación física,Mtro. Roberto Vázquez,https://zoom.us/j/1000001666
+1°A,Lunes 8 de junio,13:45,14:25,Lectura guiada,Mtra. Sofía Domínguez,https://zoom.us/j/1000001777
+1°B,Lunes 8 de junio,08:00,08:45,Español,Mtra. Adriana López,https://meet.google.com/b-b10-xyz
+1°B,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Sergio Romero,https://meet.google.com/b-b11-xyz
+1°B,Lunes 8 de junio,09:30,10:15,Conocimiento del medio,Mtra. Karla Mendoza,https://meet.google.com/b-b12-xyz
+1°B,Lunes 8 de junio,10:15,11:00,Educación socioemocional,Mtra. Verónica Ibarra,https://zoom.us/j/1000001370
+1°B,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Óscar Treviño,
+1°B,Lunes 8 de junio,12:15,13:00,Artes,Mtra. Renata Cárdenas,
+1°B,Lunes 8 de junio,13:00,13:45,Educación física,Mtro. Diego Aguilar,https://meet.google.com/b-b16-xyz
+1°B,Lunes 8 de junio,13:45,14:25,Lectura guiada,Mtra. Paulina Estrada,https://meet.google.com/b-b17-xyz
+2°A,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Lucía Hernández,https://zoom.us/j/1000002000
+2°A,Lunes 8 de junio,08:45,09:30,Español,Mtro. Andrés Salinas,https://zoom.us/j/1000002111
+2°A,Lunes 8 de junio,09:30,10:15,Inglés,Mtra. Paola Ríos,https://meet.google.com/c-a22-xyz
+2°A,Lunes 8 de junio,10:15,11:00,Conocimiento del medio,Mtra. Mariana Cervantes,https://meet.google.com/c-a23-xyz
+2°A,Lunes 8 de junio,11:30,12:15,Música,Mtro. Iván Fuentes,https://meet.google.com/c-a24-xyz
+2°A,Lunes 8 de junio,12:15,13:00,Lectura guiada,Mtra. Daniela Ortega,https://zoom.us/j/1000002555
+2°A,Lunes 8 de junio,13:00,13:45,Computación,Mtro. Roberto Vázquez,
+2°A,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Sofía Domínguez,
+2°B,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Adriana López,https://meet.google.com/c-b20-xyz
+2°B,Lunes 8 de junio,08:45,09:30,Español,Mtro. Sergio Romero,https://meet.google.com/c-b21-xyz
+2°B,Lunes 8 de junio,09:30,10:15,Inglés,Mtra. Karla Mendoza,https://zoom.us/j/1000002259
+2°B,Lunes 8 de junio,10:15,11:00,Conocimiento del medio,Mtra. Verónica Ibarra,https://zoom.us/j/1000002370
+2°B,Lunes 8 de junio,11:30,12:15,Música,Mtro. Óscar Treviño,https://zoom.us/j/1000002481
+2°B,Lunes 8 de junio,12:15,13:00,Lectura guiada,Mtra. Renata Cárdenas,https://meet.google.com/c-b25-xyz
+2°B,Lunes 8 de junio,13:00,13:45,Computación,Mtro. Diego Aguilar,https://meet.google.com/c-b26-xyz
+2°B,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Paulina Estrada,https://meet.google.com/c-b27-xyz
+3°A,Lunes 8 de junio,08:00,08:45,Español,Mtra. Lucía Hernández,
+3°A,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Andrés Salinas,
+3°A,Lunes 8 de junio,09:30,10:15,Ciencias Naturales,Mtra. Paola Ríos,https://meet.google.com/a-a32-xyz
+3°A,Lunes 8 de junio,10:15,11:00,Historia,Mtra. Mariana Cervantes,https://meet.google.com/a-a33-xyz
+3°A,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Iván Fuentes,https://zoom.us/j/1000003444
+3°A,Lunes 8 de junio,12:15,13:00,Educación física,Mtra. Daniela Ortega,https://zoom.us/j/1000003555
+3°A,Lunes 8 de junio,13:00,13:45,Artes,Mtro. Roberto Vázquez,https://zoom.us/j/1000003666
+3°A,Lunes 8 de junio,13:45,14:25,Tutoría,Mtra. Sofía Domínguez,https://meet.google.com/a-a37-xyz
+3°B,Lunes 8 de junio,08:00,08:45,Español,Mtra. Adriana López,https://meet.google.com/a-b30-xyz
+3°B,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Sergio Romero,https://meet.google.com/a-b31-xyz
+3°B,Lunes 8 de junio,09:30,10:15,Ciencias Naturales,Mtra. Karla Mendoza,https://zoom.us/j/1000003259
+3°B,Lunes 8 de junio,10:15,11:00,Historia,Mtra. Verónica Ibarra,
+3°B,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Óscar Treviño,
+3°B,Lunes 8 de junio,12:15,13:00,Educación física,Mtra. Renata Cárdenas,https://meet.google.com/a-b35-xyz
+3°B,Lunes 8 de junio,13:00,13:45,Artes,Mtro. Diego Aguilar,https://meet.google.com/a-b36-xyz
+3°B,Lunes 8 de junio,13:45,14:25,Tutoría,Mtra. Paulina Estrada,https://zoom.us/j/1000003814
+4°A,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Lucía Hernández,https://zoom.us/j/1000004000
+4°A,Lunes 8 de junio,08:45,09:30,Español,Mtro. Andrés Salinas,https://meet.google.com/b-a41-xyz
+4°A,Lunes 8 de junio,09:30,10:15,Geografía,Mtra. Paola Ríos,https://meet.google.com/b-a42-xyz
+4°A,Lunes 8 de junio,10:15,11:00,Ciencias Naturales,Mtra. Mariana Cervantes,https://meet.google.com/b-a43-xyz
+4°A,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Iván Fuentes,https://zoom.us/j/1000004444
+4°A,Lunes 8 de junio,12:15,13:00,Formación Cívica,Mtra. Daniela Ortega,
+4°A,Lunes 8 de junio,13:00,13:45,Computación,Mtro. Roberto Vázquez,
+4°A,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Sofía Domínguez,https://meet.google.com/b-a47-xyz
+4°B,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Adriana López,https://meet.google.com/b-b40-xyz
+4°B,Lunes 8 de junio,08:45,09:30,Español,Mtro. Sergio Romero,https://zoom.us/j/1000004148
+4°B,Lunes 8 de junio,09:30,10:15,Geografía,Mtra. Karla Mendoza,https://zoom.us/j/1000004259
+4°B,Lunes 8 de junio,10:15,11:00,Ciencias Naturales,Mtra. Verónica Ibarra,https://zoom.us/j/1000004370
+4°B,Lunes 8 de junio,11:30,12:15,Inglés,Mtro. Óscar Treviño,https://meet.google.com/b-b44-xyz
+4°B,Lunes 8 de junio,12:15,13:00,Formación Cívica,Mtra. Renata Cárdenas,https://meet.google.com/b-b45-xyz
+4°B,Lunes 8 de junio,13:00,13:45,Computación,Mtro. Diego Aguilar,https://meet.google.com/b-b46-xyz
+4°B,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Paulina Estrada,https://zoom.us/j/1000004814
+5°A,Lunes 8 de junio,08:00,08:45,Español,Mtra. Lucía Hernández,
+5°A,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Andrés Salinas,https://meet.google.com/c-a51-xyz
+5°A,Lunes 8 de junio,09:30,10:15,Historia,Mtra. Paola Ríos,https://meet.google.com/c-a52-xyz
+5°A,Lunes 8 de junio,10:15,11:00,Ciencias Naturales,Mtra. Mariana Cervantes,https://zoom.us/j/1000005333
+5°A,Lunes 8 de junio,11:30,12:15,Geografía,Mtro. Iván Fuentes,https://zoom.us/j/1000005444
+5°A,Lunes 8 de junio,12:15,13:00,Inglés,Mtra. Daniela Ortega,https://zoom.us/j/1000005555
+5°A,Lunes 8 de junio,13:00,13:45,Artes,Mtro. Roberto Vázquez,https://meet.google.com/c-a56-xyz
+5°A,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Sofía Domínguez,https://meet.google.com/c-a57-xyz
+5°B,Lunes 8 de junio,08:00,08:45,Español,Mtra. Adriana López,https://meet.google.com/c-b50-xyz
+5°B,Lunes 8 de junio,08:45,09:30,Matemáticas,Mtro. Sergio Romero,https://zoom.us/j/1000005148
+5°B,Lunes 8 de junio,09:30,10:15,Historia,Mtra. Karla Mendoza,
+5°B,Lunes 8 de junio,10:15,11:00,Ciencias Naturales,Mtra. Verónica Ibarra,
+5°B,Lunes 8 de junio,11:30,12:15,Geografía,Mtro. Óscar Treviño,https://meet.google.com/c-b54-xyz
+5°B,Lunes 8 de junio,12:15,13:00,Inglés,Mtra. Renata Cárdenas,https://meet.google.com/c-b55-xyz
+5°B,Lunes 8 de junio,13:00,13:45,Artes,Mtro. Diego Aguilar,https://zoom.us/j/1000005703
+5°B,Lunes 8 de junio,13:45,14:25,Educación física,Mtra. Paulina Estrada,https://zoom.us/j/1000005814
+6°A,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Lucía Hernández,https://meet.google.com/a-a60-xyz
+6°A,Lunes 8 de junio,08:45,09:30,Español,Mtro. Andrés Salinas,https://meet.google.com/a-a61-xyz
+6°A,Lunes 8 de junio,09:30,10:15,Ciencias Naturales,Mtra. Paola Ríos,https://meet.google.com/a-a62-xyz
+6°A,Lunes 8 de junio,10:15,11:00,Historia,Mtra. Mariana Cervantes,https://zoom.us/j/1000006333
+6°A,Lunes 8 de junio,11:30,12:15,Geografía,Mtro. Iván Fuentes,
+6°A,Lunes 8 de junio,12:15,13:00,Formación Cívica,Mtra. Daniela Ortega,
+6°A,Lunes 8 de junio,13:00,13:45,Inglés,Mtro. Roberto Vázquez,https://meet.google.com/a-a66-xyz
+6°A,Lunes 8 de junio,13:45,14:25,Computación,Mtra. Sofía Domínguez,https://meet.google.com/a-a67-xyz
+6°B,Lunes 8 de junio,08:00,08:45,Matemáticas,Mtra. Adriana López,https://zoom.us/j/1000006037
+6°B,Lunes 8 de junio,08:45,09:30,Español,Mtro. Sergio Romero,https://zoom.us/j/1000006148
+6°B,Lunes 8 de junio,09:30,10:15,Ciencias Naturales,Mtra. Karla Mendoza,https://zoom.us/j/1000006259
+6°B,Lunes 8 de junio,10:15,11:00,Historia,Mtra. Verónica Ibarra,https://meet.google.com/a-b63-xyz
+6°B,Lunes 8 de junio,11:30,12:15,Geografía,Mtro. Óscar Treviño,https://meet.google.com/a-b64-xyz
+6°B,Lunes 8 de junio,12:15,13:00,Formación Cívica,Mtra. Renata Cárdenas,https://meet.google.com/a-b65-xyz
+6°B,Lunes 8 de junio,13:00,13:45,Inglés,Mtro. Diego Aguilar,https://zoom.us/j/1000006703
+6°B,Lunes 8 de junio,13:45,14:25,Computación,Mtra. Paulina Estrada,
