@@ -1,8 +1,8 @@
 /* ============================================================
-   Página de inicio (index.html) — listado de los 12 grupos.
-   Pensada para coordinación/dirección: cada grupo enlaza a su
-   página individual (grupo.html?k=<token>), que es lo que se
-   comparte con los papás.
+   Router único — maneja index.html para todos los usuarios:
+   · Token de dirección  → vista con los 12 grupos
+   · Token de grupo      → vista del horario de ese grupo
+   · Sin token / inválido → vista de acceso restringido
    ============================================================ */
 
 function renderHome() {
@@ -24,7 +24,7 @@ function renderHome() {
         const token = tokenForGroup(group.id);
         const a = document.createElement("a");
         a.className = "group-btn";
-        a.href = `grupo.html?k=${token}`;
+        a.href = `?k=${token}`;
         a.setAttribute("role", "listitem");
         a.setAttribute("data-group", group.id);
         a.setAttribute("aria-label", `Ver clases del grupo ${group.display}`);
@@ -86,7 +86,9 @@ function renderLinkList() {
 
     GROUPS.forEach(group => {
         const token = tokenForGroup(group.id);
-        const url = new URL(`grupo.html?k=${token}`, window.location.href).href;
+        const url = (typeof PUBLIC_BASE_URL === "string" && PUBLIC_BASE_URL.trim())
+            ? `${PUBLIC_BASE_URL.trim()}?k=${token}`
+            : new URL(`?k=${token}`, window.location.href).href;
 
         const row = document.createElement("div");
         row.className = "link-row";
@@ -144,31 +146,45 @@ async function copyToClipboard(text) {
     }
 }
 
-/* index.html exige el token de dirección (?k=...), igual que grupo.html
-   exige el token de cada grupo: así nadie llega al listado completo
-   solo adivinando la URL — necesita el enlace que dirección comparte. */
 (async function init() {
     const params = new URLSearchParams(window.location.search);
     const token = (params.get("k") || "").trim().toLowerCase();
-
-    /* En desarrollo local (Live Server / localhost) se entra directo con el
-       token de dirección, para no pegarlo a mano en cada "Go Live". En el
-       sitio publicado, el hostname no es localhost y el candado aplica.   */
     const isLocalDev = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-    if (token !== DIRECTOR_TOKEN && isLocalDev) {
-        window.location.replace(`index.html?k=${DIRECTOR_TOKEN}`);
+
+    /* En desarrollo local sin token, entra directo como director. */
+    if (isLocalDev && !token) {
+        window.location.replace(`?k=${DIRECTOR_TOKEN}`);
         return;
     }
 
-    if (token !== DIRECTOR_TOKEN) {
-        document.getElementById("viewLocked").classList.add("is-active");
+    /* Token de dirección → vista completa de los 12 grupos. */
+    if (token === DIRECTOR_TOKEN) {
+        document.getElementById("viewHome").classList.add("is-active");
+        renderHome();
+        renderLinkList();
+        await loadData();
+        renderPendingBadges();
+        startStatusTimeTicker();
         return;
     }
 
-    document.getElementById("viewHome").classList.add("is-active");
-    renderHome();
-    renderLinkList();
-    await loadData();
-    renderPendingBadges();
-    startStatusTimeTicker();
+    /* Token de grupo → vista del horario de ese grupo. */
+    const groupId = TOKENS[token];
+    if (groupId) {
+        document.getElementById("viewGroup").classList.add("is-active");
+        const els = {
+            badge: document.getElementById("detailBadge"),
+            title: document.getElementById("detailTitle"),
+            date: document.getElementById("detailDate"),
+            count: document.getElementById("detailCount"),
+            scheduleHost: document.getElementById("scheduleHost")
+        };
+        await loadData();
+        renderGroupDetail(groupId, els);
+        startStatusTimeTicker();
+        return;
+    }
+
+    /* Sin token válido → acceso restringido. */
+    document.getElementById("viewLocked").classList.add("is-active");
 })();
