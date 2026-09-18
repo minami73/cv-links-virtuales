@@ -42,8 +42,8 @@ function normalizeGroupId(raw) {
 
 /* Google Sheets exporta horas como "8:00" (sin cero a la izquierda) al
    detectarlas como valores de hora, y los docentes podrían escribirlas de
-   formas distintas. Se normaliza a "HH:MM" para que coincida con
-   SCHEDULE_BLOCKS, cuyos horarios siempre llevan dos dígitos.            */
+   formas distintas. Se normaliza a "HH:MM" para que coincida con los
+   bloques de SCHEDULE_BLOCKS_BAJA/ALTA, que siempre llevan dos dígitos. */
 function normalizeTime(raw) {
     const s = String(raw || "").trim();
     const m = s.match(/^(\d{1,2}):(\d{2})/);

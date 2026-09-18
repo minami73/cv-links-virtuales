@@ -86,7 +86,8 @@ function renderGroupDetail(groupId, els) {
     let dayLabel = (rows.find(r => r.dia) || {}).dia || getTodayDiaLabel();
     els.date.textContent = capitalize(dayLabel);
 
-    const numClasses = SCHEDULE_BLOCKS.filter(b => !b.recess).length;
+    const blocks = scheduleForGrade(group.grade);
+    const numClasses = blocks.filter(b => !b.recess).length;
     els.count.textContent = `${numClasses} clases en agenda`;
 
     const host = els.scheduleHost;
@@ -108,7 +109,7 @@ function renderGroupDetail(groupId, els) {
     const byTime = {};
     rows.forEach(r => { if (r.hora_inicio) byTime[r.hora_inicio] = r; });
 
-    SCHEDULE_BLOCKS.forEach(block => {
+    blocks.forEach(block => {
         if (block.recess) {
             list.appendChild(buildRecess(block));
         } else {

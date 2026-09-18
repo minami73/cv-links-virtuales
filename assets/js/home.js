@@ -52,7 +52,7 @@ function countPending(groupId) {
     const byTime = {};
     rows.forEach(r => { if (r.hora_inicio) byTime[r.hora_inicio] = r; });
 
-    return SCHEDULE_BLOCKS
+    return scheduleForGroup(groupId)
         .filter(block => !block.recess)
         .filter(block => {
             const row = byTime[block.from];

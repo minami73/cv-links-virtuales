@@ -18,8 +18,21 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
    Si se deja vacía, el botón simplemente no se muestra.               */
 const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
 
-/* --- 2. Fixed schedule (Mon–Fri) --- */
-const SCHEDULE_BLOCKS = [
+/* --- 2. Horarios fijos (lun–vie). Primaria baja y alta difieren
+   únicamente en la hora del receso; ambos tienen 8 bloques de clase. --- */
+const SCHEDULE_BLOCKS_BAJA = [   // 1°, 2° y 3°
+    { from: "08:00", to: "08:45" },
+    { from: "08:45", to: "09:30" },
+    { from: "09:30", to: "10:15" },
+    { recess: true, from: "10:15", to: "10:45" },
+    { from: "10:45", to: "11:30" },
+    { from: "11:30", to: "12:15" },
+    { from: "12:15", to: "13:00" },
+    { from: "13:00", to: "13:45" },
+    { from: "13:45", to: "14:25" }
+];
+
+const SCHEDULE_BLOCKS_ALTA = [   // 4°, 5° y 6°
     { from: "08:00", to: "08:45" },
     { from: "08:45", to: "09:30" },
     { from: "09:30", to: "10:15" },
@@ -30,6 +43,15 @@ const SCHEDULE_BLOCKS = [
     { from: "13:00", to: "13:45" },
     { from: "13:45", to: "14:25" }
 ];
+
+function scheduleForGrade(grade) {
+    return grade <= 3 ? SCHEDULE_BLOCKS_BAJA : SCHEDULE_BLOCKS_ALTA;
+}
+
+function scheduleForGroup(groupId) {
+    const g = GROUPS.find(x => x.id === groupId);
+    return scheduleForGrade(g ? g.grade : 6);
+}
 
 /* --- 3. Group list --- */
 const GROUPS = [];
@@ -110,12 +132,11 @@ const SAMPLE_ROWS = (function () {
     const teachersA = ["Mtra. Lucía Hernández", "Mtro. Andrés Salinas", "Mtra. Paola Ríos", "Mtra. Mariana Cervantes", "Mtro. Iván Fuentes", "Mtra. Daniela Ortega", "Mtro. Roberto Vázquez", "Mtra. Sofía Domínguez"];
     const teachersB = ["Mtra. Adriana López", "Mtro. Sergio Romero", "Mtra. Karla Mendoza", "Mtra. Verónica Ibarra", "Mtro. Óscar Treviño", "Mtra. Renata Cárdenas", "Mtro. Diego Aguilar", "Mtra. Paulina Estrada"];
 
-    const teachingSlots = SCHEDULE_BLOCKS.filter(b => !b.recess);
-
     const rows = [];
     GROUPS.forEach(group => {
         const subjects = plans[group.grade];
         const teachers = group.section === "A" ? teachersA : teachersB;
+        const teachingSlots = scheduleForGrade(group.grade).filter(b => !b.recess);
         teachingSlots.forEach((slot, i) => {
             const subject = subjects[i % subjects.length];
             const teacher = teachers[i % teachers.length];

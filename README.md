@@ -31,9 +31,9 @@ styles.css          — Todos los estilos (sin frameworks)
 | Columna | Tipo | Detalle |
 |---|---|---|
 | `grado` | **Rígida** | Debe normalizar a un grupo válido (`1A`...`6B`). Acepta variantes como `1°A`, `1 A`, `1ºA`, pero el grado debe ser 1-6 y la sección A o B. |
-| `hora_inicio` | **Rígida** | Debe coincidir, en formato `HH:MM`, con uno de los horarios fijos de `SCHEDULE_BLOCKS` (`config.js`): `08:00, 08:45, 09:30, 10:15, 11:30, 12:15, 13:00, 13:45`. Es la clave que usa la página para ubicar tu fila en el horario del día. |
+| `hora_inicio` | **Rígida** | Debe coincidir, en formato `HH:MM`, con uno de los horarios fijos de `config.js`. El horario depende del grado: **primaria baja** (1°–3°, `SCHEDULE_BLOCKS_BAJA`, receso 10:15–10:45): `08:00, 08:45, 09:30, 10:45, 11:30, 12:15, 13:00, 13:45`. **Primaria alta** (4°–6°, `SCHEDULE_BLOCKS_ALTA`, receso 11:00–11:30): `08:00, 08:45, 09:30, 10:15, 11:30, 12:15, 13:00, 13:45`. Es la clave que usa la página para ubicar tu fila en el horario del día. |
 | `dia` | Libre | Ver convención arriba — se muestra tal cual si tiene contenido. |
-| `hora_fin` | Libre | No se usa para nada: la hora de término que ve el papá siempre sale del bloque fijo en `SCHEDULE_BLOCKS`, no de esta columna. Se puede dejar vacía. |
+| `hora_fin` | Libre | No se usa para nada: la hora de término que ve el papá siempre sale del bloque fijo (`SCHEDULE_BLOCKS_BAJA`/`SCHEDULE_BLOCKS_ALTA`), no de esta columna. Se puede dejar vacía. |
 | `materia`, `profesor` | Libre | Texto que se muestra tal cual en la tarjeta de la clase. |
 | `link` | Libre | Si está vacío, la clase se muestra como "Pendiente". |
 
