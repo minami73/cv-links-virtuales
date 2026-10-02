@@ -77,7 +77,7 @@ function detectPlatform(url) {
 }
 
 function platformLabel(p) {
-    return { zoom: "Zoom", meet: "Google Meet", teams: "Microsoft Teams", other: "Videollamada" }[p] || "";
+    return { zoom: "Zoom", meet: "Meet", teams: "Teams", other: "Videollamada" }[p] || "";
 }
 
 function normalizeRows(rows) {
