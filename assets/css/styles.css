@@ -1,17 +1,17 @@
   /* ---------- design tokens ---------- */
   :root {
-      --bg: oklch(0.985 0.006 75);
-      --bg-tint: oklch(0.97 0.008 70);
+      --bg: oklch(0.985 0.006 265);
+      --bg-tint: oklch(0.965 0.012 265);
       --surface: #ffffff;
-      --ink: oklch(0.22 0.015 50);
-      --ink-soft: oklch(0.42 0.012 55);
-      --ink-mute: oklch(0.58 0.010 60);
-      --line: oklch(0.92 0.008 65);
-      --line-soft: oklch(0.95 0.006 70);
-      --coral: oklch(0.66 0.165 28);
-      --coral-deep: oklch(0.56 0.175 28);
-      --coral-tint: oklch(0.96 0.025 28);
-      --coral-tint-2: oklch(0.92 0.045 28);
+      --ink: oklch(0.22 0.05 270);
+      --ink-soft: oklch(0.42 0.04 268);
+      --ink-mute: oklch(0.56 0.028 265);
+      --line: oklch(0.90 0.018 265);
+      --line-soft: oklch(0.94 0.012 265);
+      --coral: oklch(0.58 0.22 18);
+      --coral-deep: oklch(0.48 0.22 18);
+      --coral-tint: oklch(0.96 0.03 18);
+      --coral-tint-2: oklch(0.90 0.06 18);
 
       --r-sm: 10px;
       --r-md: 14px;
@@ -65,10 +65,8 @@
 
   /* ---------- top app bar ---------- */
   .appbar {
-      position: sticky;
-      top: 0;
       z-index: 20;
-      background: rgba(250, 248, 244, 0.86);
+      background: rgba(248, 248, 252, 0.86);
       backdrop-filter: saturate(140%) blur(14px);
       -webkit-backdrop-filter: saturate(140%) blur(14px);
       border-bottom: 1px solid var(--line-soft);
@@ -77,7 +75,7 @@
   .appbar__inner {
       max-width: 760px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 28px 20px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -91,24 +89,16 @@
   }
 
   .brand__mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--coral);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: -0.02em;
-      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .08), 0 4px 10px -6px var(--coral);
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      flex: none;
   }
 
   .brand__name {
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 15px;
+      font-size: 17px;
       letter-spacing: -0.01em;
       color: var(--ink);
       line-height: 1;
@@ -118,7 +108,7 @@
       display: block;
       font-family: var(--font-sans);
       font-weight: 500;
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--ink-mute);
@@ -368,7 +358,7 @@
   }
 
   .group-btn:hover {
-      border-color: oklch(0.86 0.018 50);
+      border-color: oklch(0.86 0.018 265);
       box-shadow: var(--shadow-md);
       transform: translateY(-1px);
   }
@@ -502,7 +492,7 @@
 
   .link-row__copy:hover {
       color: var(--ink);
-      border-color: oklch(0.85 0.02 50);
+      border-color: oklch(0.85 0.02 265);
   }
 
   .link-row__copy:focus-visible {
@@ -554,7 +544,7 @@
 
   .back-btn:hover {
       color: var(--ink);
-      border-color: oklch(0.85 0.02 50);
+      border-color: oklch(0.85 0.02 265);
   }
 
   .back-btn:focus-visible {
@@ -660,7 +650,7 @@
   }
 
   .class-card:hover {
-      border-color: oklch(0.88 0.015 50);
+      border-color: oklch(0.88 0.015 265);
       box-shadow: var(--shadow-md);
   }
 
@@ -762,7 +752,7 @@
   }
 
   .btn-join:hover {
-      background: oklch(0.32 0.02 50);
+      background: oklch(0.32 0.055 270);
   }
 
   .btn-join:active {
@@ -1116,7 +1106,12 @@
   /* ---------- small phones ---------- */
   @media (max-width: 400px) {
       .appbar__inner {
-          padding: 12px 16px;
+          padding: 16px 16px;
+      }
+
+      .brand__mark {
+          width: 63px;
+          height: 63px;
       }
 
       .wrap {
