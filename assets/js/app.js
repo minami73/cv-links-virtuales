@@ -74,6 +74,10 @@ function startStatusTimeTicker() {
    Render — detalle de UN grupo (usado por grupo.html)
    `els` = { badge, title, date, count, scheduleHost } referencias al DOM
    ============================================================ */
+function dayLabelForRows(rows) {
+    return (rows.find(r => r.dia) || {}).dia || getTodayDiaLabel();
+}
+
 function renderGroupDetail(groupId, els) {
     const group = GROUPS.find(g => g.id === groupId);
     if (!group) return;
@@ -83,10 +87,10 @@ function renderGroupDetail(groupId, els) {
 
     const rows = state.rows.filter(r => r.grupoId === groupId);
 
-    let dayLabel = (rows.find(r => r.dia) || {}).dia || getTodayDiaLabel();
+    const dayLabel = dayLabelForRows(rows);
     els.date.textContent = capitalize(dayLabel);
 
-    const blocks = scheduleForGrade(group.grade);
+    const blocks = scheduleForGrade(group.grade, dayLabel);
     const numClasses = blocks.filter(b => !b.recess).length;
     els.count.textContent = `${numClasses} clases en agenda`;
 

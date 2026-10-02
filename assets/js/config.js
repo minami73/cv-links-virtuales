@@ -19,7 +19,8 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
 const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
 
 /* --- 2. Horarios fijos (lun–vie). Primaria baja y alta difieren
-   únicamente en la hora del receso; ambos tienen 8 bloques de clase. --- */
+   únicamente en la hora del receso; ambos tienen 8 bloques de clase
+   lun–jue; el viernes son 7 (termina a las 13:45). --- */
 const SCHEDULE_BLOCKS_BAJA = [   // 1°, 2° y 3°
     { from: "08:00", to: "08:45" },
     { from: "08:45", to: "09:30" },
@@ -44,13 +45,15 @@ const SCHEDULE_BLOCKS_ALTA = [   // 4°, 5° y 6°
     { from: "13:45", to: "14:25" }
 ];
 
-function scheduleForGrade(grade) {
-    return grade <= 3 ? SCHEDULE_BLOCKS_BAJA : SCHEDULE_BLOCKS_ALTA;
+function scheduleForGrade(grade, dayLabel) {
+    const blocks = grade <= 3 ? SCHEDULE_BLOCKS_BAJA : SCHEDULE_BLOCKS_ALTA;
+    const label = (dayLabel || getTodayDiaLabel()).trim();
+    return /^viernes/i.test(label) ? blocks.slice(0, -1) : blocks;   // viernes: sin la 8ª sesión
 }
 
-function scheduleForGroup(groupId) {
+function scheduleForGroup(groupId, dayLabel) {
     const g = GROUPS.find(x => x.id === groupId);
-    return scheduleForGrade(g ? g.grade : 6);
+    return scheduleForGrade(g ? g.grade : 6, dayLabel);
 }
 
 /* --- 3. Group list --- */
@@ -136,7 +139,7 @@ const SAMPLE_ROWS = (function () {
     GROUPS.forEach(group => {
         const subjects = plans[group.grade];
         const teachers = group.section === "A" ? teachersA : teachersB;
-        const teachingSlots = scheduleForGrade(group.grade).filter(b => !b.recess);
+        const teachingSlots = scheduleForGrade(group.grade, todayDia).filter(b => !b.recess);
         teachingSlots.forEach((slot, i) => {
             const subject = subjects[i % subjects.length];
             const teacher = teachers[i % teachers.length];
