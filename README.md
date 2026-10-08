@@ -12,8 +12,7 @@ grupo.html?k=<tok>  — Vista individual de un grupo (lo que reciben los papás)
 config.js           — Config: URL del CSV, horarios, grupos, tokens, datos de ejemplo
 app.js              — Núcleo: carga de datos, render de horario, tarjetas de clase
 utils.js            — Parseo de CSV, normalización, detección de plataforma
-home.js             — Render del grid de grupos en index.html
-grupo.js            — Lógica de grupo.html: resuelve token, muestra horario
+home.js             — Router de index.html (director/papás) + render del grid
 styles.css          — Todos los estilos (sin frameworks)
 ```
 
@@ -36,6 +35,16 @@ styles.css          — Todos los estilos (sin frameworks)
 | `hora_fin` | Libre | No se usa para nada: la hora de término que ve el papá siempre sale del bloque fijo (`SCHEDULE_BLOCKS_BAJA`/`SCHEDULE_BLOCKS_ALTA`), no de esta columna. Se puede dejar vacía. |
 | `materia`, `profesor` | Libre | Texto que se muestra tal cual en la tarjeta de la clase. |
 | `link` | Libre | Si está vacío, la clase se muestra como "Pendiente". |
+
+### Ocultar una hora (días sin clases presenciales)
+
+Si ese día solo se dan ciertas hora clase (ej. Inglés, Computación, Danza) y
+el resto no aplica, escribe **`LIBRE`** en la columna `materia` de esa hora:
+la tarjeta deja de mostrarse por completo (no sale como "Pendiente"). Deja
+la celda **vacía** cuando la clase sí es ese día pero el link todavía no se
+carga — eso sigue apareciendo como "Pendiente". `LIBRE` no distingue
+mayúsculas ni acentos. La palabra se configura en `FREE_SLOT_KEYWORDS`
+(`config.js`).
 
 ### Convención para la columna `dia`
 

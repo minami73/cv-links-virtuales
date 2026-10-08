@@ -54,6 +54,7 @@ function countPending(groupId) {
 
     return scheduleForGroup(groupId, dayLabelForRows(rows))
         .filter(block => !block.recess)
+        .filter(block => !isFreeSlot(byTime[block.from]))
         .filter(block => {
             const row = byTime[block.from];
             return !(row && row.link);

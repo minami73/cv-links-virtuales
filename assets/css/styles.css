@@ -156,7 +156,7 @@
 
   .dot.is-err {
       background: var(--coral);
-      box-shadow: 0 0 0 3px oklch(0.66 0.165 28 / .18);
+      box-shadow: 0 0 0 3px oklch(0.55 0.19 25 / .18);
   }
 
   /* ---------- containers ---------- */

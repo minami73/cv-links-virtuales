@@ -91,32 +91,46 @@ function renderGroupDetail(groupId, els) {
     els.date.textContent = capitalize(dayLabel);
 
     const blocks = scheduleForGrade(group.grade, dayLabel);
-    const numClasses = blocks.filter(b => !b.recess).length;
-    els.count.textContent = `${numClasses} clases en agenda`;
 
     const host = els.scheduleHost;
     host.innerHTML = "";
 
     if (state.source === "error" && rows.length === 0) {
+        els.count.textContent = "";
         host.appendChild(buildErrorNotice());
         return;
     }
 
     if (rows.length === 0) {
+        els.count.textContent = "";
         host.appendChild(buildEmptyNotice(group));
+        return;
+    }
+
+    const byTime = {};
+    rows.forEach(r => { if (r.hora_inicio) byTime[r.hora_inicio] = r; });
+
+    const classBlocks = blocks.filter(b => !b.recess && !isFreeSlot(byTime[b.from]));
+
+    els.count.textContent = classBlocks.length === 1 ? "1 clase en agenda" : `${classBlocks.length} clases en agenda`;
+
+    if (classBlocks.length === 0) {
+        host.appendChild(buildAllFreeNotice(group));
         return;
     }
 
     const list = document.createElement("div");
     list.className = "schedule";
 
-    const byTime = {};
-    rows.forEach(r => { if (r.hora_inicio) byTime[r.hora_inicio] = r; });
+    const firstFrom = classBlocks[0].from;
+    const lastFrom = classBlocks[classBlocks.length - 1].from;
 
     blocks.forEach(block => {
         if (block.recess) {
-            list.appendChild(buildRecess(block));
-        } else {
+            if (block.from > firstFrom && block.from < lastFrom) {
+                list.appendChild(buildRecess(block));
+            }
+        } else if (!isFreeSlot(byTime[block.from])) {
             const row = byTime[block.from] || null;
             list.appendChild(buildClassCard(block, row));
         }
@@ -209,6 +223,21 @@ function buildSoftErrorNotice() {
     <div>
       <p class="notice__title">Mostrando información de respaldo</p>
       <p class="notice__text">No pudimos contactar la hoja de cálculo. Los datos podrían no estar al día — confirma con coordinación si tienes dudas.</p>
+    </div>
+  `;
+    return el;
+}
+
+function buildAllFreeNotice(group) {
+    const el = document.createElement("div");
+    el.className = "notice";
+    el.innerHTML = `
+    <div class="notice__icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+    </div>
+    <div>
+      <p class="notice__title">Hoy no hay clases virtuales para ${escapeHTML(group.display)}</p>
+      <p class="notice__text">Este grupo no tiene clases en línea programadas para hoy. Si esperabas una clase, contacta a coordinación.</p>
     </div>
   `;
     return el;

@@ -67,6 +67,23 @@ function safeLink(url) {
     return /^https?:\/\//i.test(s) ? s : "";
 }
 
+/* Normaliza para comparar palabras clave: sin acentos, minúsculas,
+   espacios colapsados. "Libre ", "LIBRE", "líbre" → "libre".        */
+function normalizeKeyword(raw) {
+    return String(raw || "")
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+/* true = la hoja marcó esta hora como libre, la tarjeta no se dibuja.
+   Fila ausente o `materia` vacía NO es libre: eso sigue siendo
+   "Pendiente".                                                       */
+function isFreeSlot(row) {
+    if (!row) return false;
+    const key = normalizeKeyword(row.materia);
+    return key !== "" && FREE_SLOT_KEYWORDS.includes(key);
+}
+
 function detectPlatform(url) {
     if (!url) return null;
     const u = url.toLowerCase();

@@ -56,6 +56,13 @@ function scheduleForGroup(groupId, dayLabel) {
     return scheduleForGrade(g ? g.grade : 6, dayLabel);
 }
 
+/* --- 2.1 Palabra clave para ocultar una hora -------------------------
+   Escribir "LIBRE" en la columna `materia` oculta esa tarjeta por
+   completo (días en que solo se dan las hora clase). Dejar la celda
+   VACÍA es distinto: la tarjeta sigue visible como "Pendiente".
+   La comparación ignora mayúsculas y acentos.                        */
+const FREE_SLOT_KEYWORDS = ["libre"];
+
 /* --- 3. Group list --- */
 const GROUPS = [];
 for (let g = 1; g <= 6; g++) {
