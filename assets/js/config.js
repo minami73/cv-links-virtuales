@@ -18,15 +18,16 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
    Si se deja vacía, el botón simplemente no se muestra.               */
 const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
 
-/* --- 2. Horarios fijos (lun–vie). Primaria baja y alta difieren
-   únicamente en la hora del receso; ambos tienen 8 bloques de clase
-   lun–jue; el viernes son 7 (termina a las 13:45). --- */
+/* --- 2. Horarios fijos (lun–vie). Sin receso: baja y alta tienen hoy el
+   mismo horario (8 bloques lun–jue; el viernes son 7, termina a las 13:45).
+   Los bloques que no se usen se marcan LIBRE en la hoja y no muestran tarjeta. --- */
 const SCHEDULE_BLOCKS_BAJA = [   // 1°, 2° y 3°
     { from: "08:00", to: "08:45" },
     { from: "08:45", to: "09:30" },
     { from: "09:30", to: "10:15" },
-    { recess: true, from: "10:15", to: "10:45" },
-    { from: "10:45", to: "11:30" },
+    { from: "10:15", to: "11:00" },
+    // { recess: true, from: "10:15", to: "10:45" },   // receso desactivado (horario anterior de baja:
+    // { from: "10:45", to: "11:30" },                 //  receso 10:15–10:45 y luego 10:45–11:30)
     { from: "11:30", to: "12:15" },
     { from: "12:15", to: "13:00" },
     { from: "13:00", to: "13:45" },
@@ -38,7 +39,7 @@ const SCHEDULE_BLOCKS_ALTA = [   // 4°, 5° y 6°
     { from: "08:45", to: "09:30" },
     { from: "09:30", to: "10:15" },
     { from: "10:15", to: "11:00" },
-    { recess: true, from: "11:00", to: "11:30" },
+    // { recess: true, from: "11:00", to: "11:30" },   // receso desactivado: las 4 horas van seguidas
     { from: "11:30", to: "12:15" },
     { from: "12:15", to: "13:00" },
     { from: "13:00", to: "13:45" },
