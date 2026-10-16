@@ -16,7 +16,7 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
    publicada solo-lectura; esta es la normal que abres para editar,
    tipo https://docs.google.com/spreadsheets/d/<ID>/edit.
    Si se deja vacía, el botón simplemente no se muestra.               */
-const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
+const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit?usp=sharing";
 
 /* --- 2. Horarios fijos (lun–vie). Sin receso: baja y alta tienen hoy el
    mismo horario (8 bloques lun–jue; el viernes son 7, termina a las 13:45).
