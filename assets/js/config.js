@@ -19,31 +19,28 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVHMC9Ma
 const SHEET_EDIT_URL = "https://docs.google.com/spreadsheets/d/1-K4oukT7B4i7CfaGRRMaAULHoYe6VoeucpD2fPpnsyo/edit";
 
 /* --- 2. Horarios fijos (lun–vie). Sin receso: baja y alta tienen hoy el
-   mismo horario (8 bloques lun–jue; el viernes son 7, termina a las 13:45).
+   mismo horario (8 bloques lun–jue; el viernes son 7, termina a las 13:40).
    Los bloques que no se usen se marcan LIBRE en la hoja y no muestran tarjeta. --- */
 const SCHEDULE_BLOCKS_BAJA = [   // 1°, 2° y 3°
-    { from: "08:00", to: "08:45" },
-    { from: "08:45", to: "09:30" },
-    { from: "09:30", to: "10:15" },
-    { from: "10:15", to: "11:00" },
-    // { recess: true, from: "10:15", to: "10:45" },   // receso desactivado (horario anterior de baja:
-    // { from: "10:45", to: "11:30" },                 //  receso 10:15–10:45 y luego 10:45–11:30)
-    { from: "11:30", to: "12:15" },
-    { from: "12:15", to: "13:00" },
-    { from: "13:00", to: "13:45" },
-    { from: "13:45", to: "14:25" }
+    { from: "07:10", to: "08:00" },
+    { from: "08:00", to: "08:50" },
+    { from: "09:10", to: "10:00" },
+    { from: "10:00", to: "10:50" },
+    { from: "10:50", to: "11:40" },
+    { from: "12:00", to: "12:50" },
+    { from: "12:50", to: "13:40" },
+    { from: "13:40", to: "14:40" }
 ];
 
 const SCHEDULE_BLOCKS_ALTA = [   // 4°, 5° y 6°
-    { from: "08:00", to: "08:45" },
-    { from: "08:45", to: "09:30" },
-    { from: "09:30", to: "10:15" },
-    { from: "10:15", to: "11:00" },
-    // { recess: true, from: "11:00", to: "11:30" },   // receso desactivado: las 4 horas van seguidas
-    { from: "11:30", to: "12:15" },
-    { from: "12:15", to: "13:00" },
-    { from: "13:00", to: "13:45" },
-    { from: "13:45", to: "14:25" }
+    { from: "07:10", to: "08:00" },
+    { from: "08:00", to: "08:50" },
+    { from: "09:10", to: "10:00" },
+    { from: "10:00", to: "10:50" },
+    { from: "10:50", to: "11:40" },
+    { from: "12:00", to: "12:50" },
+    { from: "12:50", to: "13:40" },
+    { from: "13:40", to: "14:40" }
 ];
 
 function scheduleForGrade(grade, dayLabel) {
