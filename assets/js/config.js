@@ -25,7 +25,6 @@ const SCHEDULE_BLOCKS_BAJA = [   // 1°, 2° y 3°
     { from: "08:00", to: "08:45" },
     { from: "08:45", to: "09:30" },
     { from: "09:30", to: "10:15" },
-    { recess: true, from: "10:15", to: "10:45" },
     { from: "10:45", to: "11:30" },
     { from: "11:30", to: "12:15" },
     { from: "12:15", to: "13:00" },
